@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: emqtt
+  namespace: emqtt
+  labels:
+    app: emqtt
+spec:
+  ports:
+    - port: 1883
+      name: mqtt
+    - port: 8883
+      name: mqttssl
+    - port: 8080
+      name: mgmt
+    - port: 18083
+      name: dashboard
+    - port: 4369
+      name: mapping
+  clusterIP: None
+  selector:
+    app: emqtt
