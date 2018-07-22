@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: emqx-public
+  namespace: emqx
+  labels:
+    app: emqx
+spec:
+  ports:
+    - port: 1883
+      name: mqtt
+    - port: 8883
+      name: mqttssl
+    - port: 8080
+      name: mgmt
+    - port: 18083
+      name: dashboard
+  type: LoadBalancer
+  selector:
+    app: emqx

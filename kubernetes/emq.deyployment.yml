@@ -4,7 +4,7 @@ metadata:
   name: emqx
   namespace: emqx
 spec:
-  replicas: 2
+  replicas: 100
   serviceName: emqx
   template:
     metadata:
