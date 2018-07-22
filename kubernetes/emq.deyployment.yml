@@ -1,22 +1,22 @@
 apiVersion: apps/v1beta2
 kind: StatefulSet
 metadata:
-  name: emqtt
-  namespace: emqtt
+  name: emqx
+  namespace: emqx
 spec:
   selector:
     matchLabels:
       app: emqtt
   replicas: 2
-  serviceName: emqtt
+  serviceName: emqx
   template:
     metadata:
       labels:
-        app: emqtt
+        app: emqx
     spec:
-      serviceAccountName: emqtt
+      serviceAccountName: emqx
       containers:
-      - name: emqtt
+      - name: emqx
         image: sakibsami/emqx:latest
         ports:
           - containerPort: 1883

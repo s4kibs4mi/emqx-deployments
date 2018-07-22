@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: emqtt
-  namespace: emqtt
+  name: emqx
+  namespace: emqx
   labels:
-    app: emqtt
+    app: emqx
 spec:
   ports:
     - port: 1883
@@ -17,6 +17,6 @@ spec:
       name: dashboard
     - port: 4369
       name: mapping
-  clusterIP: None
+  type: LoadBalancer
   selector:
-    app: emqtt
+    app: emqx
