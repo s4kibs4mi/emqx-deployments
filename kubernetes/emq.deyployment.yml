@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: emqx
-  replicas: 2
+  replicas: 10
   serviceName: emqx
   template:
     metadata:
@@ -42,17 +42,17 @@ spec:
           periodSeconds: 10
         env:
           - name: EMQ_NAME
-            value: "emqtt"
+            value: "emqx"
           - name: EMQ_CLUSTER__DISCOVERY
             value: "k8s"
           - name: EMQ_CLUSTER__K8S__APISERVER
             value: "https:\\/\\/kubernetes.default:443"
           - name: EMQ_CLUSTER__K8S__SERVICE_NAME
-            value: "emqtt"
+            value: "emqx"
           - name: EMQ_CLUSTER__K8S__ADDRESS_TYPE
             value: "ip"
           - name: EMQ_CLUSTER__K8S__APP_NAME
-            value: "emqtt"
+            value: "emqx"
           - name: EMQ_NODE__COOKIE
             value: "secret"
           - name: EMQ_CLUSTER__NAME
