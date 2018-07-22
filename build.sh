@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 docker build -t sakibsami/emqx:latest .

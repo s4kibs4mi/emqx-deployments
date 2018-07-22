@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 #!/bin/sh
 ## EMQ docker image start script
 # Huang Rui <vowstar@gmail.com>
