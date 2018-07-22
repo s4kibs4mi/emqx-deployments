@@ -17,6 +17,6 @@ spec:
       name: dashboard
     - port: 4369
       name: mapping
-  type: LoadBalancer
+  clusterIP: None
   selector:
     app: emqx

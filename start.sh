@@ -43,9 +43,9 @@ fi
 
 # Set hosts to prevent cluster mode failed
 
-# if [[ ! -z "$LOCAL_IP" && ! -z "$EMQ_HOST" ]]; then
-#     echo "$LOCAL_IP        $EMQ_HOST" >> /etc/hosts
-# fi
+if [[ ! -z "$LOCAL_IP" && ! -z "$EMQ_HOST" ]]; then
+    echo "$LOCAL_IP        $EMQ_HOST" >> /etc/hosts
+fi
 
 # unset EMQ_NAME
 # unset EMQ_HOST
@@ -161,16 +161,16 @@ echo "['$(date -u +"%Y-%m-%dT%H:%M:%SZ")']:emqttd start"
 
 # Run cluster script
 
-if [[ -x "./cluster.sh" ]]; then
-    ./cluster.sh &
-fi
+# if [[ -x "./cluster.sh" ]]; then
+#    ./cluster.sh &
+# fi
 
 # Join an exist cluster
 
-if [[ ! -z "$EMQ_JOIN_CLUSTER" ]]; then
-    echo "['$(date -u +"%Y-%m-%dT%H:%M:%SZ")']:emqttd try join $EMQ_JOIN_CLUSTER"
-    /opt/emqttd/bin/emqttd_ctl cluster join $EMQ_JOIN_CLUSTER &
-fi
+# if [[ ! -z "$EMQ_JOIN_CLUSTER" ]]; then
+#    echo "['$(date -u +"%Y-%m-%dT%H:%M:%SZ")']:emqttd try join $EMQ_JOIN_CLUSTER"
+#    /opt/emqttd/bin/emqttd_ctl cluster join $EMQ_JOIN_CLUSTER &
+# fi
 
 # Change admin password
 
