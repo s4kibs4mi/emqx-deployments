@@ -4,7 +4,7 @@ metadata:
   name: emqx
   namespace: emqx
 spec:
-  replicas: 100
+  replicas: 1
   serviceName: emqx
   template:
     metadata:
@@ -14,7 +14,7 @@ spec:
       serviceAccountName: emqx
       containers:
       - name: emqx
-        image: sakibsami/emqx:latest
+        image: harbor.pathaointernal.com/emq/emqx:latest
         ports:
           - containerPort: 1883
           - containerPort: 8883

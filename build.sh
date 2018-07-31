@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t sakibsami/emqx:latest .
+docker build -t harbor.pathaointernal.com/emq/emqx:latest .
