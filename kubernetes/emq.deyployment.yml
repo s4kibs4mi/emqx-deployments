@@ -1,10 +1,13 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: emqx
   namespace: emqx
 spec:
-  replicas: 100
+  selector:
+    matchLabels:
+      app: emqx
+  replicas: 10
   serviceName: emqx
   template:
     metadata:
