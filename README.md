@@ -18,6 +18,6 @@ kubectl apply -f kubernetes/emq.public.service.yml
 ```
 - Create deployment
 ```console
-kubectl apply -f kubernetes/emq.deployment.yml
+kubectl apply -f kubernetes/emq.deyployment.yml
 ```
 - Done
