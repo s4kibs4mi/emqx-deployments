@@ -1,16 +1,8 @@
 version: '3.1'
 
 services:
-  emq-1:
-      image: sakibsami/emqx
-      volumes:
-        - emq.conf:/opt/emqttd/etc/emq.conf
-      ports:
-        - 1883:1883
-        - 8883:8883
-        - 8083:8083
-        - 8084:8084
-        - 8080:8080
-        - 18083:18083
-        - 4369:4369
-        - 6000-6999:6000-6999
+  emq:
+    image: harbor.pathaointernal.com/emq/emqx:latest
+    ports:
+      - 1883:1883
+      - 18083:18083

@@ -15,6 +15,7 @@ spec:
       containers:
       - name: emqx
         image: harbor.pathaointernal.com/emq/emqx:latest
+        imagePullPolicy: Always
         ports:
           - containerPort: 1883
           - containerPort: 8883
@@ -40,6 +41,10 @@ spec:
         env:
           - name: EMQ_NAME
             value: "emqtt"
+          - name: emq_auth
+            value: "http://localhost/auth"
+          - name: emq_acl
+            value: "http://localhost/acl"
           - name: EMQ_CLUSTER__DISCOVERY
             value: "k8s"
           - name: EMQ_CLUSTER__K8S__APISERVER
