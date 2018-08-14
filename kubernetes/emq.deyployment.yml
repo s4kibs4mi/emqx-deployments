@@ -45,6 +45,10 @@ spec:
             value: "emqtt"
           - name: EMQ_CLUSTER__DISCOVERY
             value: "k8s"
+          - name: emq_auth
+            value: http://localhost/auth
+          - name: emq_acl
+            value: http://localhost/acl
           - name: EMQ_CLUSTER__K8S__APISERVER
             value: "https://kubernetes.default:443"
           - name: EMQ_CLUSTER__K8S__NAMESPACE
